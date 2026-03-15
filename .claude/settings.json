@@ -1,0 +1,8 @@
+{
+  "project_name": "WP Tailwind Starter",
+  "export_path": "export/starter_theme",
+  "preferred_language": "PHP",
+  "frameworks": ["WordPress", "TailwindCSS"],
+  "rules_path": ".claude/rules",
+  "skills_path": ".claude/skills"
+}

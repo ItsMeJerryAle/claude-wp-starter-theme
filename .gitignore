@@ -1,0 +1,9 @@
+# Ignore the final theme export folder
+export/
+
+# Ignore site-specific theme rules (project-local, not for sharing)
+.claude/rules/frontend/theme-bridgewell.md
+
+# Ignore OS-specific temporary files
+.DS_Store
+Thumbs.db
