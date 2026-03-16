@@ -1,5 +1,5 @@
-# Ignore the final theme export folder
-export/
+# Ignore theme export contents but keep folder structure
+export/starter_theme/**
 
 # Ignore site-specific theme rules (project-local, not for sharing)
 .claude/rules/frontend/theme-bridgewell.md
