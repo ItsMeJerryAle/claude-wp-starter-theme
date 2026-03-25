@@ -104,6 +104,7 @@ add_filter( 'get_user_option_closedpostboxes_page', function( $closed ) {
 // ── Includes ─────────────────────────────────────────────────────────────────
 require_once get_template_directory() . '/inc/enqueues.php';
 require_once get_template_directory() . '/inc/theme-settings-page.php';
+require_once get_template_directory() . '/inc/blocks.php';
 require_once get_template_directory() . '/inc/acf-fields.php';
 require_once get_template_directory() . '/inc/cpt-services.php';
 require_once get_template_directory() . '/inc/cpt-testimonials.php';
