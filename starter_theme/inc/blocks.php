@@ -96,9 +96,10 @@ function tail_register_acf_blocks() {
     foreach ( $blocks as $block ) {
         acf_register_block_type( array_merge( $block, array(
             'category' => 'theme-blocks',
+            'mode'     => 'edit',   // Show ACF fields inline in the editor
             'supports' => array(
                 'align' => false,
-                'mode'  => false,
+                'mode'  => false,   // Hide the preview/edit toggle — always stay in edit mode
             ),
         ) ) );
     }
