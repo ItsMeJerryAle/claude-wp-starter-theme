@@ -36,7 +36,7 @@ get_template_part( 'template-parts/sections/hero-inner', null, array(
 ) );
 ```
 
-### The ACF group (`inc/acf-fields.php`)
+### The ACF group
 - Register a **separate ACF field group** per page template with its own field names
 - Scope it to that page template via location rule: `page_template == page-templates/template-name.php`
 - The group only appears on the correct page editor — no meta box bleed across pages
@@ -49,13 +49,15 @@ get_template_part( 'template-parts/sections/hero-inner', null, array(
 | Layout differs significantly between pages | Create a new partial file |
 | Section only ever appears on one page | `get_field()` directly inside the partial is fine |
 
-## Existing reusable partials
+## Existing Reusable Partials
 
 | Partial | `$args` keys | Used by |
 |---------|-------------|---------|
-| `hero-inner.php` | `heading`, `description`, `btn_text`, `btn_url` | `template-get-support.php`, `single-service-default.php` (and future inner pages) |
+| `hero-inner.php` | `heading`, `description`, `btn_text`, `btn_url` | `template-get-support.php`, `single-service-default.php` |
 | `application-process.php` | `eyebrow`, `heading`, `btn_text`, `btn_url`, `steps`, `theme` (`light`\|`dark`) | `template-get-support.php`, `single-service-apply-for-funds.php`, `single-service-default.php` |
-| `faq-section.php` | `eyebrow`, `heading`, `items` (array of `faq_question`/`faq_answer`) | `single-service-default.php` (and future templates needing a simple accordion FAQ) |
+| `faq-section.php` | `eyebrow`, `heading`, `items` (array of `faq_question`/`faq_answer`) | `single-service-default.php` |
+
+> **Update this table** every time a partial is converted to `$args`-based or a new page template reuses an existing one.
 
 ## Hero Background Image Rule
 
@@ -65,5 +67,3 @@ get_template_part( 'template-parts/sections/hero-inner', null, array(
 - The partial calls `get_the_post_thumbnail_url( get_the_ID(), 'full' )` internally
 - Falls back to the default hero image if no featured image is set
 - Do **not** add a background image ACF field to any hero group
-
-> **Update this table** every time a partial is converted to `$args`-based or a new page template reuses an existing one.
