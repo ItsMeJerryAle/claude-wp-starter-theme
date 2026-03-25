@@ -17,13 +17,14 @@
 
 ## Building Sections (from screenshot or description)
 
+Sections are **ACF Blocks** — registered in `inc/blocks.php`, rendered via `template-parts/blocks/`, fields in `inc/acf/blocks/`. Users drag and drop blocks in Gutenberg.
+
 | Rule / Skill | When |
 |---|---|
-| `rules/sections/quality.md` | **Every section** — performance, accessibility, and best-practice checklist |
-| `rules/sections/reuse.md` | **Before creating any partial** — reuse via `$args` if layout already exists |
-| `rules/wordpress/acf-structure.md` | **Adding ACF fields** — one file per template in `inc/acf/`, never inline in `acf-fields.php` |
-| `skills/component.md` | Screenshot → partial workflow |
-| `skills/acf-fields.md` | ACF field registration for page-specific sections |
+| `rules/sections/quality.md` | **Every block** — performance, accessibility, and best-practice checklist |
+| `rules/wordpress/acf-structure.md` | **File structure** — blocks/, options.php, helpers.php layout |
+| `skills/component.md` | Screenshot → block workflow (3 files per block) |
+| `skills/acf-fields.md` | ACF Block registration blueprint — `acf_register_block_type()`, field group, render template |
 | `rules/sections/404.md` | 404 page — fixed layout and hardcoded text |
 
 ---

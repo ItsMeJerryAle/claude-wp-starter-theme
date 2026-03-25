@@ -1,16 +1,23 @@
-# Skill: Screenshot-to-Component Workflow
+# Skill: Screenshot-to-Block Workflow
 
 ## 1. Analyze the Screenshot
 Identify the section type (Hero, FAQ, Cards, etc.) and every piece of editable content.
 
-## 2. File Placement
-- Section partials: `template-parts/sections/{name}.php`
-- Component partials (header/footer elements): `template-parts/components/{name}.php`
+## 2. Output: Three Files Per Block
+
+| File | Purpose |
+|------|---------|
+| `template-parts/blocks/{name}.php` | Block render template |
+| `inc/acf/blocks/{name}.php` | ACF field group scoped to `acf/{name}` |
+| `inc/blocks.php` *(update)* | Add `acf_register_block_type()` entry |
+
+> Global components (topbar, header, footer) are **not** blocks — use `skills/acf-options.md` and `template-parts/components/`.
 
 ## 3. Implementation Checklist
+- Register the block in `inc/blocks.php` → category `theme-blocks`, `mode => false`
+- Scope the field group: `param => 'block', value => 'acf/{name}'`
+- Loader: add `require_once $acf_dir . 'blocks/{name}.php';` to `inc/acf-fields.php`
+- Block template reads all fields at top with `?: 'Default'` fallbacks — no `get_field()` calls scattered inline
 - Use `tail_` prefix for all custom PHP functions
-- Use `get_template_part()` to include the partial in page templates — never `include`/`require`
-- Register ACF fields in `inc/acf/template-{slug}.php` (see `rules/wordpress/acf-structure.md`)
-- Add `data-animate` + `data-delay` to section headers and cards (hero sections are exempt)
-- Meet all standards in `rules/sections/quality.md` before considering the section complete
-- Check `rules/sections/reuse.md` before creating a new partial — reuse existing ones via `$args`
+- Add `data-animate` + `data-delay` to section headers and cards (hero blocks exempt)
+- Meet all standards in `rules/sections/quality.md` before considering the block complete
