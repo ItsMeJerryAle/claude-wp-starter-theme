@@ -39,3 +39,14 @@ function tail_enqueue_assets() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'tail_enqueue_assets' );
+
+// ── Block editor styles (Gutenberg only) ──────────────────────────────────────
+function tail_enqueue_editor_assets() {
+    wp_enqueue_style(
+        'tail-editor-styles',
+        get_template_directory_uri() . '/assets/css/editor.css',
+        array(),
+        '1.0'
+    );
+}
+add_action( 'enqueue_block_editor_assets', 'tail_enqueue_editor_assets' );

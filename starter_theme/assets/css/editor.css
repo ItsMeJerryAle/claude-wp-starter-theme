@@ -1,0 +1,35 @@
+/* ── ACF Block Editor Styles ─────────────────────────────────────────────────
+ * Loaded via enqueue_block_editor_assets — applies in the Gutenberg editor only.
+ * Targets ACF block edit-mode field forms.
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+/* Remove scrollbar on the block fields container */
+.acf-block-component,
+.acf-block-fields,
+.acf-block-fields .acf-fields {
+    overflow: visible !important;
+    max-height: none !important;
+}
+
+/* ── Block title above the tab strip ──────────────────────────────────────── */
+[data-type^="acf/"] .acf-block-fields::before {
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #949494;
+    padding: 10px 14px 6px;
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 0;
+}
+
+[data-type="acf/hero"]      .acf-block-fields::before { content: "Hero"; }
+[data-type="acf/story"]     .acf-block-fields::before { content: "Story"; }
+[data-type="acf/services"]  .acf-block-fields::before { content: "Services"; }
+[data-type="acf/impact"]    .acf-block-fields::before { content: "Impact"; }
+[data-type="acf/events"]    .acf-block-fields::before { content: "Events"; }
+[data-type="acf/resources"] .acf-block-fields::before { content: "Resources"; }
+[data-type="acf/partners"]  .acf-block-fields::before { content: "Partners"; }
+[data-type="acf/support"]   .acf-block-fields::before { content: "Support"; }
